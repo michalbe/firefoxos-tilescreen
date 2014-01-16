@@ -51,7 +51,13 @@
 			if (this.entryPoint) {
 				tile.dataset.entryPoint = this.entryPoint;
 			}
-			tile.style.backgroundImage = 'url(' + this.app.origin + this.icon + ')';
+			var iconPath = this.app.origin + this.icon;
+			
+			if (this.descriptor.name === 'Browser') {
+		    iconPath = 'style/icons/Browser.jpg';
+		  }
+		  
+			tile.style.backgroundImage = 'url(' + iconPath + ')';
 
 			parent.appendChild(tile);
 		},
