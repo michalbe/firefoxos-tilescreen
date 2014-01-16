@@ -4,13 +4,23 @@
 }
 
 body {
-  background-color: #F0F;
+  background-color: transparent;
+  text-align: center;
+  padding: 30px 0;
 }
 
 .tile {
 	display: inline-block;
-	width: 30%;
-	height: 100px;
-	margin: 1.5%;
+	width: 350px;
+	border: 1px solid #000;
+	height: 350px;
+	margin: auto;
 	background: no-repeat center;
+	margin-left: 2px;
+	background-color: #f0f;
+}
+
+body.small-icons .tile {
+  width:  232px;
+  height: 232px;
 }

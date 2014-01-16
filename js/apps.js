@@ -27,7 +27,7 @@
 			if (!this.descriptor.icons) {
 				return '';
 			}
-			return this.descriptor.icons['60'];
+			return this.descriptor.icons['120'];
 		},
 
 		get descriptor() {
