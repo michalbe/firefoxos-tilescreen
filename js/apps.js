@@ -45,6 +45,7 @@
 				return;
 			}
 
+      // App Icon
 			var tile = document.createElement('div');
 			tile.className = 'tile';
 			tile.dataset.origin = this.app.origin;
@@ -58,7 +59,13 @@
 		  }
 		  
 			tile.style.backgroundImage = 'url(' + iconPath + ')';
-
+      
+      // App Label
+      var label = document.createElement('span');
+      label.classList.add('app-label');
+      label.innerHTML = this.app.name;
+      
+      tile.appendChild(label);
 			parent.appendChild(tile);
 		},
 

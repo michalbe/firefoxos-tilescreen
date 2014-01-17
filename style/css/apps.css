@@ -19,7 +19,7 @@ body {
 	background-size: cover;
 	margin-left: 4px;
 	background-color: #f0f;
-  transition:width 1s, height 1s,
+  transition: width 0.2s, height 0.5s,
 }
 
 body.small-icons .tile {
