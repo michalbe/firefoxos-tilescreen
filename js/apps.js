@@ -54,8 +54,11 @@
 			}
 			var iconPath = this.app.origin + this.icon;
 			
+			// Temporary icons
 			if (this.descriptor.name === 'Browser') {
 		    iconPath = 'style/icons/Browser.jpg';
+		  } else {
+		    tile.style.backgroundSize = "180%";
 		  }
 		  
 			tile.style.backgroundImage = 'url(' + iconPath + ')';
