@@ -21,6 +21,7 @@ body {
 	background-color: #f0f;
   transition: width 0.2s, height 0.5s;
   text-align: left;
+  overflow: hidden;
 }
 
 body.small-icons .tile {
@@ -29,11 +30,17 @@ body.small-icons .tile {
 }
 
 .tile .app-label {
-  width: 300px;
+  width: 280px;
   height: 86px;
+  padding-left: 15px;
   display:block;
   color: #fff;
   font-size: 45px;
+  line-height: 86px;
   background-image: url('/style/img/label.png');
   background-repeat: repeat-x;
+}
+
+body.small-icons .tile .app-label{
+  font-size: 40px;
 }
