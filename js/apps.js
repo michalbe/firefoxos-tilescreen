@@ -107,6 +107,21 @@
 		}
 	}
 
+  /**
+   * Pinch & zoom design change
+   */
+  
+  var gd = new GestureDetector(parent);
+  gd.startDetecting();
+
+  parent.addEventListener('transform', function(e) {
+    var scale = e.detail.relative.scale;
+    if (scale < 1) {
+      document.body.classList.add('small-icons');
+    } else if (scale > 1) {
+      document.body.classList.remove('small-icons');
+    }
+  });
 	/**
 	 * Fetch all apps and render them.
 	 */
