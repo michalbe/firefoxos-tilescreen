@@ -63,7 +63,7 @@
       // App Label
       var label = document.createElement('span');
       label.classList.add('app-label');
-      label.innerHTML = this.app.name;
+      label.innerHTML = this.descriptor.name;
       
       tile.appendChild(label);
 			parent.appendChild(tile);

@@ -12,12 +12,12 @@ body {
 .tile {
 	display: inline-block;
 	width: 370px;
-	border: 1px solid #000;
 	height: 370px;
 	margin: auto;
 	background: no-repeat center;
 	background-size: cover;
 	margin-left: 4px;
+	margin-bottom: 4px;
 	background-color: #f0f;
   transition: width 0.2s, height 0.5s,
 }
