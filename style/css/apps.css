@@ -19,10 +19,21 @@ body {
 	margin-left: 4px;
 	margin-bottom: 4px;
 	background-color: #f0f;
-  transition: width 0.2s, height 0.5s,
+  transition: width 0.2s, height 0.5s;
+  text-align: left;
 }
 
 body.small-icons .tile {
   width:  232px;
   height: 232px;
+}
+
+.tile .app-label {
+  width: 300px;
+  height: 86px;
+  display:block;
+  color: #fff;
+  font-size: 45px;
+  background-image: url('/style/img/label.png');
+  background-repeat: repeat-x;
 }
