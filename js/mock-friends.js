@@ -4,7 +4,7 @@ var friends = [
   'mike',
   'dominica',
   'jan',
-  'malecki',
+  'mac',
   'mack'
   'sandy',
   'jacob',
