@@ -143,7 +143,7 @@
 	/**
 	 * Add an event listener to launch the app on click.
 	 */
-	window.addEventListener('click', function(e) {
+	parent.addEventListener('click', function(e) {
 		var container = e.target
 		var icon = getIconByElement(container);
 		icon.launch();
