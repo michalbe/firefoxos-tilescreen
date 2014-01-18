@@ -52,4 +52,14 @@
     
     document.getElementById('social-overlay').classList.add('active');
 	});
+	
+	window.addEventListener('hashchange', function(e) {
+	  if (window.location.hash = '#root') {
+	    // Home button pressed
+	    var active = document.querySelector('.active-tile');
+      if(active)
+        active.classList.remove('active-tile');
+      document.getElementById('social-overlay').classList.remove('active');
+	  }
+	})
 })();
