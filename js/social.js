@@ -25,6 +25,11 @@
     'sandra'
   ];
   
+  // Randomize friends
+  friends.sort(function() {
+    return .5 - Math.random();
+  });
+  
   var parent = document.getElementById('social');
   
   friends.forEach(function(friend){
