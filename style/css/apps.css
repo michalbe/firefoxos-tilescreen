@@ -60,3 +60,19 @@ body.small-icons .tile .app-label{
   height: 100%;
   display: block;
 }
+
+#social-overlay {
+  width: 100%;
+  height: 100%;
+  background-image: url('/style/img/social-overlay.png');
+  background-repeat: repeat-x;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display:none;
+  pointer-events: none;
+}
+
+#social-overlay.active {
+  display: block;
+}

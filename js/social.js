@@ -49,5 +49,7 @@
     
 		var container = e.target
     container.classList.add('active-tile');
+    
+    document.getElementById('social-overlay').classList.add('active');
 	});
 })();
