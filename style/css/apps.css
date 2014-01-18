@@ -44,3 +44,13 @@ body.small-icons .tile {
 body.small-icons .tile .app-label{
   font-size: 40px;
 }
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#social {
+  background-color: #BADA55;
+}
