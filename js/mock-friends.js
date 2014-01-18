@@ -10,5 +10,14 @@ var friends = [
   'jacob',
   'patricia',
   'donut',
-  'jimmy'
+  'jimmy',
+  'agnes',
+  'isabella',
+  'julia',
+  'maria',
+  'franco',
+  'maya',
+  'natalia',
+  'paula',
+  'sandra'
 ]
