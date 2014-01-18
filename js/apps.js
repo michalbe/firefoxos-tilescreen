@@ -48,27 +48,25 @@
       // App Icon
 			var tile = document.createElement('div');
 			tile.className = 'tile';
-			tile.dataset.origin = this.app.origin;
-			if (this.entryPoint) {
-				tile.dataset.entryPoint = this.entryPoint;
+			
+			var dataset = {
+			  origin: this.app.origin
 			}
+			
+			if (this.entryPoint) {
+				dataset.entryPoint = this.entryPoint;
+			}
+			
 			var iconPath = this.app.origin + this.icon;
 			
 			// Temporary icons
 			if (this.descriptor.name === 'Browser') {
 		    iconPath = 'style/icons/Browser.jpg';
 		  } else {
-		    tile.style.backgroundSize = "180%";
+		    //tile.style.backgroundSize = "180%";
 		  }
-		  
-			tile.style.backgroundImage = 'url(' + iconPath + ')';
       
-      // App Label
-      var label = document.createElement('span');
-      label.classList.add('app-label');
-      label.innerHTML = this.descriptor.name;
-      
-      tile.appendChild(label);
+      var tile = createTile(iconPath, this.descriptor.name, dataset);
 			parent.appendChild(tile);
 		},
 
