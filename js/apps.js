@@ -5,7 +5,8 @@
 
 	// Apps container
 	var parent = document.getElementById('apps');
-
+  var socialParent = document.getElementById('social');
+  
 	// List of all application icons
 	var icons = [];
 
@@ -130,6 +131,63 @@
       document.body.classList.remove('small-icons');
     }
   });
+  
+  // Switching from Apps to Social tabs
+  var initialTouchPosition = [];
+  var deltaX = 0;
+  var threshold = 30;
+  
+  // Actions
+  var panStart = function(evt) {
+    console.log('elo!-------');
+    // evt.stopPropagation();
+    //     evt.target.setCapture(true);
+    window.addEventListener('touchmove', moveEventInit);
+    //window.addEventListener('mouseup', CardsView);
+    //window.addEventListener('swipe', CardsView);
+
+    if (evt.touches) {
+      initialTouchPosition = [evt.touches[0].pageX, evt.touches[0].pageY];
+    } else {
+      initialTouchPosition = [evt.pageX, evt.pageY];
+    }
+  };
+  
+  var moveEventInit = function(evt) {
+    evt.stopPropagation();
+    var touchPosition = evt.touches ? [evt.touches[0].pageX,
+                                       evt.touches[0].pageY] :
+                                      [evt.pageX, evt.pageY];
+
+    deltaX = initialTouchPosition[0] - touchPosition[0];
+    
+    if (Math.abs(deltaX) > threshold) {
+      socialParent.style.display = 'block';
+      window.removeEventListener('touchmove', moveEventInit);
+      window.addEventListener('touchmove', moveEventAction);
+    }
+  }
+  
+  var moveEventAction = function(evt) {
+    deltaX = initialTouchPosition[0] - (evt.touches ? evt.touches[0].pageX :
+                                            evt.pageX);
+    move();
+  }
+  
+  var move = function(){
+    var translateSign = 100;
+    if (deltaX < 0) {
+      return;
+    }
+    
+    var movementFactor = Math.abs(deltaX) / window.innerWidth;
+    socialParent.style.transform = 'translateX(' + (translateSign * (1 - movementFactor)) + '%)';
+                    
+  }
+  
+  // Adding listeners
+  window.addEventListener('touchstart', panStart);
+  
 	/**
 	 * Fetch all apps and render them.
 	 */
