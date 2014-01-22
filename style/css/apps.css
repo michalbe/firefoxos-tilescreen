@@ -88,8 +88,10 @@ body.small-icons .tile .app-label{
   left: 14px;
   top: 405px;
   z-index: 1000;
+  display: none;
 }
 
-#social-overlay.active {
+#social.active #social-input,
+#social.active #social-overlay {
   display: block;
 }

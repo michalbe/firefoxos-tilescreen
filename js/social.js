@@ -43,6 +43,9 @@
   });
   
   parent.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('tile')) {
+      return;
+    }
     var active = document.querySelector('.active-tile');
     if(active)
       active.classList.remove('active-tile');
@@ -50,7 +53,7 @@
 		var container = e.target
     container.classList.add('active-tile');
     
-    document.getElementById('social-overlay').classList.add('active');
+    parent.classList.add('active');
 	});
 	
 	window.addEventListener('hashchange', function(e) {
@@ -59,7 +62,7 @@
 	    var active = document.querySelector('.active-tile');
       if(active)
         active.classList.remove('active-tile');
-      document.getElementById('social-overlay').classList.remove('active');
+      parent.classList.remove('active');
 	  }
 	})
 })();
