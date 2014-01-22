@@ -49,13 +49,9 @@
     if (!e.target.classList.contains('tile')) {
       return;
     }
-    var active = document.querySelector('.active-tile');
-    if(active)
-      active.classList.remove('active-tile');
     
 		var container = e.target
 		var name = container.dataset.name;
-    container.classList.add('active-tile');
     input.value = '';
     input.placeholder = 'Write to ' + name.toUpperCase();
     
@@ -66,10 +62,6 @@
 	
 	window.addEventListener('hashchange', function(e) {
 	  if (window.location.hash = '#root') {
-	    // Home button pressed
-	    var active = document.querySelector('.active-tile');
-      if(active)
-        active.classList.remove('active-tile');
       document.body.classList.remove('active');
 	  }
 	})
