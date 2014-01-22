@@ -31,6 +31,7 @@
   });
   
   var parent = document.getElementById('social');
+  var input = document.getElementById('social-input');
   
   friends.forEach(function(friend, index) {
     var tile = createTile(
@@ -52,6 +53,7 @@
     
 		var container = e.target
     container.classList.add('active-tile');
+    input.value = '';
     
     parent.classList.add('active');
 	});
