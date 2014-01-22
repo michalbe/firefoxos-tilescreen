@@ -33,6 +33,7 @@
   var parent = document.getElementById('social');
   var input = document.getElementById('social-input');
   var bigTile = document.getElementById('big-active-tile');
+  var bigTileLabel = bigTile.getElementsByClassName('app-label')[0];
   
   friends.forEach(function(friend, index) {
     var tile = createTile(
@@ -53,12 +54,14 @@
       active.classList.remove('active-tile');
     
 		var container = e.target
+		var name = container.dataset.name;
     container.classList.add('active-tile');
     input.value = '';
-    input.placeholder = 'Write to ' + container.dataset.name.toUpperCase();
+    input.placeholder = 'Write to ' + name.toUpperCase();
     
     document.body.classList.add('active');
     bigTile.style.backgroundImage = container.style.backgroundImage;
+    bigTileLabel.innerHTML = name;
 	});
 	
 	window.addEventListener('hashchange', function(e) {
