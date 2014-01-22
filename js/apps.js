@@ -126,9 +126,9 @@
   parent.addEventListener('transform', function(e) {
     var scale = e.detail.relative.scale;
     if (scale < 1) {
-      document.body.classList.add('small-icons');
+      parent.classList.add('small-icons');
     } else if (scale > 1) {
-      document.body.classList.remove('small-icons');
+      parent.classList.remove('small-icons');
     }
   });
   
@@ -139,7 +139,6 @@
   
   // Actions
   var panStart = function(evt) {
-    console.log('elo!-------');
     // evt.stopPropagation();
     //     evt.target.setCapture(true);
     window.addEventListener('touchmove', moveEventInit);

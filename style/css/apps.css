@@ -34,7 +34,7 @@ body {
   z-index: 500;
 }
 
-body.small-icons .tile {
+.small-icons .tile {
   width:  232px;
   height: 232px;
 }
@@ -52,7 +52,7 @@ body.small-icons .tile {
   text-transform: capitalize;
 }
 
-body.small-icons .tile .app-label{
+.small-icons .tile .app-label{
   font-size: 40px;
 }
 
