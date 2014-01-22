@@ -143,7 +143,6 @@
     //     evt.target.setCapture(true);
     window.addEventListener('touchmove', moveEventInit);
     window.addEventListener('touchend', moveEnd);
-    window.addEventListener('swipe', moveEnd);
 
     if (evt.touches) {
       initialTouchPosition = [evt.touches[0].pageX, evt.touches[0].pageY];
@@ -173,7 +172,7 @@
     move();
   }
   
-  var move = function(){
+  var move = function() {
     var translateSign = 100;
     if (deltaX < 0) {
       return;
@@ -193,26 +192,8 @@
     window.removeEventListener('touchmove', moveEventInit);
     window.removeEventListener('touchmove', moveEventAction);
     window.removeEventListener('touchend', moveEnd);
-    window.removeEventListener('swipe', moveEnd);
 
-    var eventDetailEnd = eventDetail.end;
-    var dx;
-    
-    if (eventDetailEnd) {
-      dx = eventDetail.dx;
-      direction = eventDetail.direction;
-    } else { 
-      
-      if (evt.touches[0]) {
-        dx = evt.touches[0].pageX - initialTouchPosition[0];
-      } else {
-        dx = evt.pageX - initialTouchPosition[0];
-      }
-      
-      direction = dx > 0 ? 'right' : 'left';
-    }
-    
-    if (Math.abs(dx) > window.innerWidth/2) {
+    if (Math.abs(deltaX) > window.innerWidth/2) {
       socialParent.style.transform = 'translateX(0)';
       socialParent.style.position = 'static';
       parent.style.display = 'none';
