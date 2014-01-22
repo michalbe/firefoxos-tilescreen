@@ -37,7 +37,7 @@
     var tile = createTile(
       'style/img/fb/' + friend + '.jpg',
       friend,
-      index === 1 ? { notification: 1 } : {}
+      { name: friend }
     );
     
     parent.appendChild(tile);
@@ -54,6 +54,7 @@
 		var container = e.target
     container.classList.add('active-tile');
     input.value = '';
+    input.placeholder = 'Write to ' + container.dataset.name.toUpperCase();
     
     parent.classList.add('active');
 	});
