@@ -32,6 +32,7 @@
   
   var parent = document.getElementById('social');
   var input = document.getElementById('social-input');
+  var bigTile = document.getElementById('big-active-tile');
   
   friends.forEach(function(friend, index) {
     var tile = createTile(
@@ -56,7 +57,8 @@
     input.value = '';
     input.placeholder = 'Write to ' + container.dataset.name.toUpperCase();
     
-    parent.classList.add('active');
+    document.body.classList.add('active');
+    bigTile.style.backgroundImage = container.style.backgroundImage;
 	});
 	
 	window.addEventListener('hashchange', function(e) {
@@ -65,7 +67,7 @@
 	    var active = document.querySelector('.active-tile');
       if(active)
         active.classList.remove('active-tile');
-      parent.classList.remove('active');
+      document.body.classList.remove('active');
 	  }
 	})
 })();

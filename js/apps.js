@@ -142,8 +142,8 @@
     // evt.stopPropagation();
     //     evt.target.setCapture(true);
     window.addEventListener('touchmove', moveEventInit);
-    //window.addEventListener('mouseup', CardsView);
-    //window.addEventListener('swipe', CardsView);
+    window.addEventListener('touchend', moveEnd);
+    window.addEventListener('swipe', moveEnd);
 
     if (evt.touches) {
       initialTouchPosition = [evt.touches[0].pageX, evt.touches[0].pageY];
@@ -182,6 +182,42 @@
     var movementFactor = Math.abs(deltaX) / window.innerWidth;
     socialParent.style.transform = 'translateX(' + (translateSign * (1 - movementFactor)) + '%)';
                     
+  }
+  
+  var moveEnd = function(evt) {
+    evt.stopPropagation();
+    var element = evt.target;
+    var eventDetail = evt.detail;
+
+    document.releaseCapture();
+    window.removeEventListener('touchmove', moveEventInit);
+    window.removeEventListener('touchmove', moveEventAction);
+    window.removeEventListener('touchend', moveEnd);
+    window.removeEventListener('swipe', moveEnd);
+    window.removeEventListener('touchstart', panStart);
+
+    var eventDetailEnd = eventDetail.end;
+    var dx;
+    
+    if (eventDetailEnd) {
+      dx = eventDetail.dx;
+      direction = eventDetail.direction;
+    } else { 
+      
+      if (evt.touches) {
+        dx = evt.touches[0].pageX - initialTouchPosition[0];
+      } else {
+        dx = evt.pageX - initialTouchPosition[0];
+      }
+      
+      direction = dx > 0 ? 'right' : 'left';
+    }
+    
+    if (Math.abs(dx) > threshold) {
+      socialParent.style.transform = 'translateX(0)';
+      socialParent.style.position = 'static';
+      parent.style.display = 'none';
+    }
   }
   
   // Adding listeners

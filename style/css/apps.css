@@ -20,18 +20,25 @@ body {
 	margin-left: 4px;
 	margin-bottom: 4px;
 	background-color: #FFF;
-  transition: width 0.5s, height 0.5s, transform 0.5s;
+  transition: width 0.5s, height 0.5s, transform 0.5s, opacity: 0.5s;
   text-align: left;
   overflow: hidden;
 }
 
 .tile.active-tile {
+  opacity: 0.5;
+}
+
+#big-active-tile {
   width: 744px;
   height: 500px;
   position: fixed;
   top: 5px;
   left: 10px;
   z-index: 500;
+  display: none;
+  background: no-repeat center;
+	background-size: cover;
 }
 
 .small-icons .tile {
@@ -78,7 +85,6 @@ body {
   top: 0;
   left: 0;
   display:none;
-  pointer-events: none;
   z-index: 200;
 }
 
@@ -98,7 +104,8 @@ body {
   display: none;
 }
 
-#social.active #social-input,
-#social.active #social-overlay {
+body.active #social-input,
+body.active #big-active-tile,
+body.active #social-overlay {
   display: block;
 }
