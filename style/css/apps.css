@@ -20,13 +20,9 @@ body {
 	margin-left: 4px;
 	margin-bottom: 4px;
 	background-color: #FFF;
-  transition: width 0.5s, height 0.5s, transform 0.5s, opacity: 0.5s;
+  transition: width 0.5s, height 0.5s, transform 0.5s;
   text-align: left;
   overflow: hidden;
-}
-
-.tile.active-tile {
-  opacity: 0.5;
 }
 
 #big-active-tile {

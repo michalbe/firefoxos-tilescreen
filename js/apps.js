@@ -194,7 +194,6 @@
     window.removeEventListener('touchmove', moveEventAction);
     window.removeEventListener('touchend', moveEnd);
     window.removeEventListener('swipe', moveEnd);
-    window.removeEventListener('touchstart', panStart);
 
     var eventDetailEnd = eventDetail.end;
     var dx;
@@ -204,7 +203,7 @@
       direction = eventDetail.direction;
     } else { 
       
-      if (evt.touches) {
+      if (evt.touches[0]) {
         dx = evt.touches[0].pageX - initialTouchPosition[0];
       } else {
         dx = evt.pageX - initialTouchPosition[0];
@@ -213,10 +212,14 @@
       direction = dx > 0 ? 'right' : 'left';
     }
     
-    if (Math.abs(dx) > threshold) {
+    if (Math.abs(dx) > window.innerWidth/2) {
       socialParent.style.transform = 'translateX(0)';
       socialParent.style.position = 'static';
       parent.style.display = 'none';
+      window.removeEventListener('touchstart', panStart);
+    } else {
+      socialParent.style.transform = 'translateX(100%)';
+      socialParent.style.display = 'none';
     }
   }
   
