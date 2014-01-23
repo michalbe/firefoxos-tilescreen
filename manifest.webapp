@@ -1,25 +1,25 @@
 {
-  "name": "Home Boilerplate",
-  "description": "FirefoxOS Homescreen Boilerplate",
+  "name": "Tile Screen",
+  "description": "FirefoxOS Homescreen with tiles & Social support",
   "launch_path": "/index.html",
   "type": "certified",
   "role": "homescreen",
   "developer": {
-    "name": "Kevin Grandon",
-    "url": "https://github.com/kevingrandon/"
+    "name": "Michal Budzynski",
+    "url": "https://github.com/michalbe/"
   },
   "permissions": {
     "webapps-manage":{}
   },
   "locales": {
     "en-US": {
-      "name": "Home Boilerplate",
-      "description": "FirefoxOS Homescreen Boilerplate"
+    "name": "Tile Screen",
+    "description": "FirefoxOS Homescreen with tiles & Social support"
     }
   },
   "default_locale": "en-US",
   "icons": {
-    "30": "/style/icons/Blank.png"
+    "30": "/style/icons/icon.png"
   },
   "orientation": "portrait-primary",
   "activities": {},
