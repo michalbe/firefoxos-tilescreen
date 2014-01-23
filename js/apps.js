@@ -5,7 +5,6 @@
 
 	// Apps container
 	var parent = document.getElementById('apps');
-  var socialParent = document.getElementById('social');
   
 	// List of all application icons
 	var icons = [];
@@ -123,89 +122,16 @@
   var gd = new GestureDetector(parent);
   gd.startDetecting();
 
-  parent.addEventListener('transform', function(e) {
-    var scale = e.detail.relative.scale;
+  parent.addEventListener('transform', function(evt) {
+    evt.stopPropagation();
+    evt.target.setCapture(true);
+    var scale = evt.detail.relative.scale;
     if (scale < 1) {
       parent.classList.add('small-icons');
     } else if (scale > 1) {
       parent.classList.remove('small-icons');
     }
   });
-  
-  // Switching from Apps to Social tabs
-  var initialTouchPosition = [];
-  var deltaX = 0;
-  var threshold = 30;
-  
-  // Actions
-  var panStart = function(evt) {
-    // evt.stopPropagation();
-    //     evt.target.setCapture(true);
-    window.addEventListener('touchmove', moveEventInit);
-    window.addEventListener('touchend', moveEnd);
-
-    if (evt.touches) {
-      initialTouchPosition = [evt.touches[0].pageX, evt.touches[0].pageY];
-    } else {
-      initialTouchPosition = [evt.pageX, evt.pageY];
-    }
-  };
-  
-  var moveEventInit = function(evt) {
-    evt.stopPropagation();
-    var touchPosition = evt.touches ? [evt.touches[0].pageX,
-                                       evt.touches[0].pageY] :
-                                      [evt.pageX, evt.pageY];
-
-    deltaX = initialTouchPosition[0] - touchPosition[0];
-    
-    if (Math.abs(deltaX) > threshold) {
-      socialParent.style.display = 'block';
-      window.removeEventListener('touchmove', moveEventInit);
-      window.addEventListener('touchmove', moveEventAction);
-    }
-  }
-  
-  var moveEventAction = function(evt) {
-    deltaX = initialTouchPosition[0] - (evt.touches ? evt.touches[0].pageX :
-                                            evt.pageX);
-    move();
-  }
-  
-  var move = function() {
-    var translateSign = 100;
-    if (deltaX < 0) {
-      return;
-    }
-    
-    var movementFactor = Math.abs(deltaX) / window.innerWidth;
-    socialParent.style.transform = 'translateX(' + (translateSign * (1 - movementFactor)) + '%)';
-                    
-  }
-  
-  var moveEnd = function(evt) {
-    evt.stopPropagation();
-    var element = evt.target;
-    var eventDetail = evt.detail;
-
-    document.releaseCapture();
-    window.removeEventListener('touchmove', moveEventInit);
-    window.removeEventListener('touchmove', moveEventAction);
-    window.removeEventListener('touchend', moveEnd);
-
-    if (Math.abs(deltaX) > window.innerWidth/2) {
-      socialParent.style.transform = 'translateX(0)';
-      socialParent.style.position = 'static';
-      parent.style.display = 'none';
-      window.removeEventListener('touchstart', panStart);
-    } else {
-      socialParent.style.transform = 'translateX(100%)';
-      socialParent.style.display = 'none';
-    }
-  }
-  
-  // Adding listeners
-  window.addEventListener('touchstart', panStart);
   
 	/**
 	 * Fetch all apps and render them.
@@ -222,8 +148,10 @@
 	 */
 	parent.addEventListener('click', function(e) {
 		var container = e.target
-		var icon = getIconByElement(container);
-		icon.launch();
+		if (container.classList.contains('tile')) {
+		  var icon = getIconByElement(container);
+		  icon.launch();
+	  }
 	});
 
 }());
