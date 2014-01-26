@@ -1,6 +1,6 @@
 * {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -11,15 +11,15 @@ body {
 }
 
 .tile {
-	display: inline-block;
-	width: 370px;
-	height: 370px;
-	margin: auto;
-	background: no-repeat center;
-	background-size: cover;
-	margin-left: 4px;
-	margin-bottom: 4px;
-	background-color: #FFF;
+  display: inline-block;
+  width: 370px;
+  height: 370px;
+  margin: auto;
+  background: no-repeat center;
+  background-size: cover;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  background-color: #FFF;
   transition: width 0.5s, height 0.5s, transform 0.5s;
   text-align: left;
   overflow: hidden;
@@ -34,7 +34,7 @@ body {
   z-index: 500;
   display: none;
   background: no-repeat center;
-	background-size: cover;
+  background-size: cover;
 }
 
 .small-icons .tile {

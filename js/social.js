@@ -50,19 +50,19 @@
       return;
     }
     
-		var container = e.target
-		var name = container.dataset.name;
+    var container = e.target
+    var name = container.dataset.name;
     input.value = '';
     input.placeholder = 'Write to ' + name.toUpperCase();
     
     document.body.classList.add('active');
     bigTile.style.backgroundImage = container.style.backgroundImage;
     bigTileLabel.innerHTML = name;
-	});
-	
-	window.addEventListener('hashchange', function(e) {
-	  if (window.location.hash = '#root') {
+  });
+  
+  window.addEventListener('hashchange', function(e) {
+    if (window.location.hash = '#root') {
       document.body.classList.remove('active');
-	  }
-	})
+    }
+  })
 })();
