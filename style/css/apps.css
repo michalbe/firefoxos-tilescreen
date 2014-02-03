@@ -26,8 +26,8 @@ body {
 }
 
 #big-active-tile {
-  width: 380px;
-  height: 300px;
+  width: 374px;
+  height: 280px;
   position: fixed;
   top: 5px;
   left: 10px;
@@ -44,12 +44,13 @@ body {
 
 .app-label {
   width: 180px;
-  height: 58px;
+  height: 35px;
   padding-left: 5px;
   display:block;
+  text-align: left;
   color: #fff;
-  font-size: 27px;
-  line-height: 43px;
+  font-size: 22px;
+  line-height: 35px;
   background-image: url('/style/img/label.png');
   background-repeat: repeat-x;
   background-size: 100%;
@@ -86,17 +87,17 @@ body {
 }
 
 #social-input {
-  width: 744px;
-  height: 100px;
-  font-size: 40px;
+  width: 384px;
+  height: 45px;
+  font-size: 30px;
   -moz-appearance: none;
   background-image: url('/style/img/trans-pix.png');
   background-color: transparent;
   border: none;
   color: #FFF;
   position: fixed;
-  left: 14px;
-  top: 405px;
+  padding-left: 14px;
+  top: 240px;
   z-index: 1000;
   display: none;
 }
