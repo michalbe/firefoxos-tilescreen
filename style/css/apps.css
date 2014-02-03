@@ -12,8 +12,8 @@ body {
 
 .tile {
   display: inline-block;
-  width: 370px;
-  height: 370px;
+  width: 180px;
+  height: 180px;
   margin: auto;
   background: no-repeat center;
   background-size: cover;
@@ -26,8 +26,8 @@ body {
 }
 
 #big-active-tile {
-  width: 744px;
-  height: 500px;
+  width: 380px;
+  height: 400px;
   position: fixed;
   top: 5px;
   left: 10px;
@@ -38,25 +38,26 @@ body {
 }
 
 .small-icons .tile {
-  width:  232px;
-  height: 232px;
+  width:  115px;
+  height: 115px;
 }
 
 .app-label {
-  width: 280px;
-  height: 86px;
-  padding-left: 15px;
+  width: 180px;
+  height: 58px;
+  padding-left: 5px;
   display:block;
   color: #fff;
-  font-size: 45px;
-  line-height: 86px;
+  font-size: 27px;
+  line-height: 43px;
   background-image: url('/style/img/label.png');
   background-repeat: repeat-x;
+  background-size: 100%;
   text-transform: capitalize;
 }
 
 .small-icons .tile .app-label{
-  font-size: 40px;
+  font-size: 17px;
 }
 
 .page {
