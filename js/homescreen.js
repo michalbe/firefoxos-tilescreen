@@ -1,4 +1,5 @@
 (function(){
+  console.log('screen width', window.innerWidth, 'height', window.innerHeight);
   var socialParent = document.getElementById('social');
   var appsParent = document.getElementById('apps');
   var socialActive = false;
