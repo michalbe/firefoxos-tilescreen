@@ -37,6 +37,9 @@
     
     if (Math.abs(deltaX) > threshold) {
       navigation.classList.add('shown');
+      
+      // Disable scrolling while panning
+      document.body.style.overflowY = 'hidden';
 
       window.addEventListener('touchend', moveEnd);
 
@@ -92,6 +95,9 @@
     var element = evt.target;
     var eventDetail = evt.detail;
     navigationBar.classList.remove('shown');
+
+    // Enable scrolling when panning is over
+    document.body.style.overflowY = 'scroll';
 
     document.releaseCapture();
     window.removeEventListener('touchmove', moveEventInit);
