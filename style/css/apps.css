@@ -102,6 +102,12 @@ body {
   display: none;
 }
 
+::-moz-placeholder {
+  font-weight: normal;
+  color: #FFF;  
+  opacity: 0.9;
+}
+
 body.active #social-input,
 body.active #big-active-tile,
 body.active #social-overlay {
