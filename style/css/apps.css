@@ -60,6 +60,7 @@ body {
   z-index: 999999999;
   transform: translateY(-80px);
   transition: transform;
+  pointer-event: none;
 }
 
 #navigation.shown {
