@@ -134,6 +134,11 @@
    */
   navigator.mozApps.mgmt.getAll().onsuccess = function(event) {
     event.target.result.forEach(makeIcons);
+
+    icons.sort(function() {
+      return .5 - Math.random();
+    });
+
     icons.forEach(function(icon) {
       icon.render();
     });
