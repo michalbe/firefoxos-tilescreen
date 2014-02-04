@@ -76,7 +76,7 @@ body {
   float:left;
   color: #fff;
   border-top: 1px #F6532C solid;
-  transition: border-top 0.5s;
+  transition: border-top 0.5sz aka;
 }
 
 #navigation span.active {
@@ -103,7 +103,7 @@ body {
 }
 
 .app-label {
-  width: 180px;
+  width: 115px;
   height: 35px;
   padding-left: 5px;
   display:block;
