@@ -76,6 +76,7 @@ body {
   float:left;
   color: #fff;
   border-top: 1px #F6532C solid;
+  transition: border-top 0.5s;
 }
 
 #navigation span.active {
