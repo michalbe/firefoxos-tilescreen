@@ -59,6 +59,8 @@
     
     if (container.dataset.notifications) {
       input.placeholder = 'Reply to ' + name.toUpperCase();
+      delete container.dataset.notifications;
+      container.removeChild(container.childNodes[0]);
     } else {
       input.placeholder = 'Write to ' + name.toUpperCase();
     }
