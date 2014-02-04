@@ -2,13 +2,18 @@
   console.log('screen width', window.innerWidth, 'height', window.innerHeight);
   var socialParent = document.getElementById('social');
   var appsParent = document.getElementById('apps');
+  var navigationBar = document.getElementById('navigation');
   var socialActive = false;
-
+  var spans = navigationBar.querySelectorAll('span');
+  // navigation span indexes
+  var APPS = 0,
+      SOCIAL = 1;
+  var active = APPS;
   // Switching from Apps to Social tabs
   var initialTouchPosition = [];
   var deltaX = 0;
-  var threshold = 150;
-  
+  var threshold = 120;
+
   // Actions
   var panStart = function(evt) {
     evt.stopPropagation();
@@ -31,6 +36,8 @@
     deltaX = initialTouchPosition[0] - touchPosition[0];
     
     if (Math.abs(deltaX) > threshold) {
+      navigation.classList.add('shown');
+
       window.addEventListener('touchend', moveEnd);
 
       socialParent.style.position = 'absolute';
@@ -60,13 +67,31 @@
     } else if (socialActive && deltaX < 0) {
       movementFactor = 100 - (translateSign * (1 - (Math.abs(deltaX) / window.innerWidth)));
       socialParent.style.transform = 'translateX(' + movementFactor + '%)';
-    } 
+    }
+    if (Math.abs(deltaX) > window.innerWidth/2) {
+      if (deltaX > 0) {
+        spans[APPS].classList.remove('active');
+        spans[SOCIAL].classList.add('active');
+      } else {
+        spans[APPS].classList.add('active');
+        spans[SOCIAL].classList.remove('active');
+      }
+    } else {
+      if (deltaX > 0) {
+        spans[APPS].classList.add('active');
+        spans[SOCIAL].classList.remove('active');
+      } else {
+        spans[APPS].classList.remove('active');
+        spans[SOCIAL].classList.add('active');
+      }
+    }
   }
   
   var moveEnd = function(evt) {
     evt.stopPropagation();
     var element = evt.target;
     var eventDetail = evt.detail;
+    navigationBar.classList.remove('shown');
 
     document.releaseCapture();
     window.removeEventListener('touchmove', moveEventInit);
@@ -89,7 +114,7 @@
       socialParent.style.display = 'none';
     }
   }
-  
+
   // Adding listeners
   window.addEventListener('touchstart', panStart);
 })();
