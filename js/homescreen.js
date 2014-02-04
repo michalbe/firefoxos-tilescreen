@@ -54,9 +54,14 @@
   var move = function() {
     console.log('--', deltaX);
     var translateSign = 100;
-    var movementFactor = translateSign * (1 - (Math.abs(deltaX) / window.innerWidth));
-    if (socialActive) movementFactor = 100 - movementFactor;
-    socialParent.style.transform = 'translateX(' + movementFactor + '%)';
+    var movementFactor; 
+    if (!socialActive && deltaX > 0) {
+      movementFactor = translateSign * (1 - (Math.abs(deltaX) / window.innerWidth));
+      socialParent.style.transform = 'translateX(' + movementFactor + '%)';
+    } else if (socialActive && deltaX < 0) {
+      movementFactor = 100 - (translateSign * (1 - (Math.abs(deltaX) / window.innerWidth)));
+      socialParent.style.transform = 'translateX(' + movementFactor + '%)';
+    } 
   }
   
   var moveEnd = function(evt) {
