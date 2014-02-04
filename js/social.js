@@ -56,7 +56,12 @@
     var container = e.target
     var name = container.dataset.name;
     input.value = '';
-    input.placeholder = 'Write to ' + name.toUpperCase();
+    
+    if (container.dataset.notifications) {
+      input.placeholder = 'Reply to ' + name.toUpperCase();
+    } else {
+      input.placeholder = 'Write to ' + name.toUpperCase();
+    }
     
     document.body.classList.add('active');
     bigTile.style.backgroundImage = container.style.backgroundImage;
