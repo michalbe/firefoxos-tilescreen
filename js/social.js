@@ -37,7 +37,7 @@
   
   friends.forEach(function(friend, index) {
     var dataset = { name: friend };
-    if (index === 1) dataset.notification = 1;
+    if (index === 1) dataset.notifications = 1;
 
     var tile = createTile(
       'style/img/fb/' + friend + '.jpg',

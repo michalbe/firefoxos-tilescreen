@@ -23,6 +23,31 @@ body {
   transition: width 0.5s, height 0.5s, transform 0.5s;
   text-align: left;
   overflow: hidden;
+  position: relative;
+}
+
+.notification {
+  width: 60px;
+  height: 60px;
+  background-color: #F6532C;
+  opacity: 0.9;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  color: #FFF;
+  position: absolute;
+  bottom: 0;
+  animation: notify 15s linear 0s infinite;
+}
+
+@keyframes notify {
+ 0% { transform: scale(1); }
+ 2% { transform: scale(1.2); }
+ 4% { transform: scale(0.8); }
+ 6% { transform: scale(1.2); }
+ 8% { transform: scale(0.8); }
+ 10% { transform: scale(1); }
+ 100% { transform: scale(1); }
 }
 
 #big-active-tile {
