@@ -39,7 +39,7 @@
       navigation.classList.add('shown');
       
       // Disable scrolling while panning
-      document.body.style.overflowY = 'hidden';
+      document.body.classList.add('noscroll');
 
       window.addEventListener('touchend', moveEnd);
 
@@ -97,7 +97,7 @@
     navigationBar.classList.remove('shown');
 
     // Enable scrolling when panning is over
-    document.body.style.overflowY = 'scroll';
+    document.body.classList.remove('noscroll');
 
     document.releaseCapture();
     window.removeEventListener('touchmove', moveEventInit);

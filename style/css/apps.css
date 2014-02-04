@@ -10,6 +10,10 @@ body {
   overflow-x: hidden;
 }
 
+body.noscroll {
+  overflow-y: hidden;
+}
+
 .tile {
   display: inline-block;
   width: 180px;
