@@ -36,10 +36,13 @@
   var bigTileLabel = bigTile.getElementsByClassName('app-label')[0];
   
   friends.forEach(function(friend, index) {
+    var dataset = { name: friend };
+    if (index === 1) dataset.notification = 1;
+
     var tile = createTile(
       'style/img/fb/' + friend + '.jpg',
       friend,
-      { name: friend }
+      dataset
     );
     
     parent.appendChild(tile);

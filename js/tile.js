@@ -3,6 +3,7 @@ var createTile = function(icon, name, dataset) {
   tile.className = 'tile';
   
   for (var el in dataset) {
+    console.log('--', el, dataset[el]);
     tile.dataset[el] = dataset[el];
   }
   
