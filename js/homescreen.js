@@ -34,9 +34,9 @@
       window.addEventListener('touchend', moveEnd);
 
       socialParent.style.position = 'absolute';
-      if (!socialActive) {
+      if (!socialActive && deltaX > 0) {
         socialParent.style.display = 'block';
-      } else {
+      } else if (socialActive && deltaX < 0){
         appsParent.style.display = 'block';
       }
       
@@ -52,6 +52,7 @@
   }
   
   var move = function() {
+    console.log('--', deltaX);
     var translateSign = 100;
     var movementFactor = translateSign * (1 - (Math.abs(deltaX) / window.innerWidth));
     if (socialActive) movementFactor = 100 - movementFactor;
@@ -69,12 +70,12 @@
     window.removeEventListener('touchend', moveEnd);
 
     if (Math.abs(deltaX) > window.innerWidth/2) {
-      if (!socialActive) {
+      if (!socialActive && deltaX > 0) {
         socialParent.style.transform = 'translateX(0)';
         socialParent.style.position = 'static';
         appsParent.style.display = 'none';
         socialActive = true;
-      } else {
+      } else if (socialActive && deltaX < 0){
         socialParent.style.transform = 'translateX(100%)';
         socialParent.style.display = 'none';
         socialActive = false;
