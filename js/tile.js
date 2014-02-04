@@ -3,10 +3,16 @@ var createTile = function(icon, name, dataset) {
   tile.className = 'tile';
   
   for (var el in dataset) {
-    console.log('--', el, dataset[el]);
     tile.dataset[el] = dataset[el];
   }
   
+  if (dataset.notifications) {
+    var notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.innerHTML = dataset.notifications;
+    tile.appendChild(notification);
+  }
+
   tile.style.backgroundImage = 'url(' + icon + ')';
   
   // App Label
