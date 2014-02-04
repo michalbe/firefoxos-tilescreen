@@ -57,14 +57,10 @@
         dataset.entryPoint = this.entryPoint;
       }
       
-      var iconPath = this.app.origin + this.icon;
+      //var iconPath = this.app.origin + this.icon;
       
       // Temporary icons
-      if (this.descriptor.name === 'Browser') {
-        iconPath = 'style/icons/Browser.jpg';
-      } else {
-        //tile.style.backgroundSize = "180%";
-      }
+      var iconPath = 'style/icons/Icon_' + this.descriptor.name+ '.png';
       
       var tile = createTile(iconPath, this.descriptor.name, dataset);
       parent.appendChild(tile);
