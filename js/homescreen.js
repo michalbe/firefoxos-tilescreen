@@ -52,7 +52,6 @@
   }
   
   var move = function() {
-    console.log('--', deltaX);
     var translateSign = 100;
     var movementFactor; 
     if (!socialActive && deltaX > 0) {
