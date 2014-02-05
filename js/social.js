@@ -71,7 +71,7 @@
   });
   
   window.addEventListener('hashchange', function(e) {
-    if (window.location.hash === '#root') {
+    if (window.location.hash.indexOf('#root') > -1) {
       document.body.classList.remove('active');
     }
   });
