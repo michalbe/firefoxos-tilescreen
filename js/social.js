@@ -163,6 +163,11 @@
     'GAIA FTW!',
     'That\'s magnificent!',
     'Brilliant idea!',
-    ' o-<-<):   <-- me on the skateboard'
+    ' o-<-<):   <-- me on the skateboard',
+    'Warsaw is an Alpha– global city, a major international tourist destination and an important economic hub in Central Europe. It is also known as the "phoenix city" because it has survived so many wars throughout its history.',
+    'Warsaw lies in east-central Poland about 300 km (190 mi) from the Carpathian Mountains and about 260 km (160 mi) from the Baltic Sea, 523 km (325 mi) east of Berlin, Germany.',
+    'BRB',
+    'W8',
+    '-.-'
   ]
 })();
