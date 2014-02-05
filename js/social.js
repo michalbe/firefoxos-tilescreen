@@ -74,5 +74,22 @@
     if (window.location.hash = '#root') {
       document.body.classList.remove('active');
     }
-  })
+  });
+
+  var talkModule = (function() {
+    var clear = function() {
+      bigTile.innerHTML = '';
+      bigTile.appendChild(bigTileLabel);
+    };
+    
+    var talk = function(what) {
+      
+    }
+    
+    return {
+      clear: clear
+    }
+  })();
+  
+  talkModule.clear();
 })();
