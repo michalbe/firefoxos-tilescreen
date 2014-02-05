@@ -112,18 +112,30 @@
 
     var say = function(what) {
       createMsg(what, false);
+      
       setTimeout(function() {
-        var answer;
-        var rand = ~~(Math.random()*3)%3;
-        if (rand === 1) {
-          answer = what;
-        } else {
-          var l = sentences.length;
-          rand = ~~(Math.random()*l)%l;
-          answer = sentences[rand];
-        }
-        createMsg(answer, true);
+        createAnswer(what);
       }, 2500);
+    }
+    
+    var createAnswer = function(what) {
+      var answer;
+      var l = sentences.length;
+      
+      var rand = ~~(Math.random()*3)%3;
+      if (rand === 1) {
+        answer = what;
+      } else {
+        rand = ~~(Math.random()*l)%l;
+        answer = sentences[rand];
+      }
+      createMsg(answer, true);
+      
+      rand = ~~(Math.random()*3)%3;
+      if (rand === 1) {
+        rand = ~~(Math.random()*l)%l;
+        setTimeout(function(){ createAnswer(sentences[rand]); }, 1500);
+      }
     }
     
     return {
