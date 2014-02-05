@@ -110,6 +110,7 @@ body.noscroll {
   margin: 5px 0;
   color: #fff;
   opacity: 0.8;
+  word-wrap: break-word;
 }
 
 #big-active-tile .msg:last-child {

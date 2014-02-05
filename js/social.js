@@ -61,7 +61,10 @@
       input.placeholder = 'Reply to ' + name.toUpperCase();
       delete container.dataset.notifications;
       container.removeChild(container.childNodes[0]);
+      talkModule.clear();
+      talkModule.createMsg('Hi, how are you?', true);
     } else {
+      talkModule.clear();
       input.placeholder = 'Write to ' + name.toUpperCase();
     }
     
@@ -109,14 +112,45 @@
 
     var say = function(what) {
       createMsg(what, false);
-      setTimeout(function(){
-        createMsg(what, true);
+      setTimeout(function() {
+        var answer;
+        var rand = ~~(Math.random()*3)%3;
+        if (rand === 1) {
+          answer = what;
+        } else {
+          var l = sentences.length;
+          rand = ~~(Math.random()*l)%l;
+          answer = sentences[rand];
+        }
+        createMsg(answer, true);
       }, 2500);
     }
     
     return {
       say: say,
+      createMsg: createMsg,
       clear: clear
     }
   })();
+  
+  var sentences = [
+    'LOL',
+    'What? I don\'t understand..',
+    'o.O',
+    ':)',
+    ':))))',
+    'That\'s great!',
+    '<3',
+    'Wow, such homescreen. Wow.',
+    'Yo, whatcha doin?',
+    'It\'s -35 celsius in Poland today',
+    'Are you serious?!?!',
+    'How about Chris?',
+    'That\'s awesome! But pls tell me more about yourself.',
+    'FirefoxOS ROXXXXXX',
+    'GAIA FTW!',
+    'That\'s magnificent!',
+    'Brilliant idea!',
+    ' o-<-<):   <-- me on the skateboard'
+  ]
 })();
