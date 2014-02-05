@@ -76,6 +76,13 @@
     }
   });
 
+  input.addEventListener('keypress', function(e){
+    if (e.keyCode === 13) {
+      talkModule.say(input.value);
+      input.value = '';
+    }
+  });
+  
   var talkModule = (function() {
     var clear = function() {
       bigTile.innerHTML = '';
@@ -90,21 +97,22 @@
       } else {
         msg.classList.add('outgoing');
       }
-      
+
       msg.textContent = content;
       
       bigTile.appendChild(msg);
     }
 
     var say = function(what) {
-      
+      createMsg(what, false);
+      setTimeout(function(){
+        createMsg(what, true);
+      }, 2500);
     }
     
     return {
-      say: say
+      say: say,
       clear: clear
     }
   })();
-  
-  talkModule.clear();
 })();
