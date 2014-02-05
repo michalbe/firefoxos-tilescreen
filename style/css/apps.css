@@ -112,6 +112,10 @@ body.noscroll {
   opacity: 0.8;
 }
 
+#big-active-tile .msg:last-child {
+  margin-bottom: 50px;
+}
+
 #big-active-tile .msg.incoming {
   background-color: #F6532C;
   float: right;
