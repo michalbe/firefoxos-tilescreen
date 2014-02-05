@@ -99,6 +99,7 @@ body.noscroll {
   display: none;
   background: no-repeat center;
   background-size: cover;
+  overflow-y: scroll;
 }
 
 #big-active-tile .msg {
