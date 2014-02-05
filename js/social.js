@@ -71,7 +71,7 @@
   });
   
   window.addEventListener('hashchange', function(e) {
-    if (window.location.hash = '#root') {
+    if (window.location.hash === '#root') {
       document.body.classList.remove('active');
     }
   });
@@ -97,10 +97,14 @@
       } else {
         msg.classList.add('outgoing');
       }
-
+      
+      var id = Math.random().toString(36).slice(2).toUpperCase();
+      msg.id = id;
       msg.textContent = content;
       
       bigTile.appendChild(msg);
+
+      window.location.hash = "#" + id;
     }
 
     var say = function(what) {
