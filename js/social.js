@@ -82,11 +82,26 @@
       bigTile.appendChild(bigTileLabel);
     };
     
-    var talk = function(what) {
+    var createMsg = function(content, incoming) {
+      var msg = document.createElement('div');
+      msg.classList.add('msg');
+      if (incoming) {
+        msg.classList.add('incoming');
+      } else {
+        msg.classList.add('outgoing');
+      }
+      
+      msg.textContent = content;
+      
+      bigTile.appendChild(msg);
+    }
+
+    var say = function(what) {
       
     }
     
     return {
+      say: say
       clear: clear
     }
   })();
