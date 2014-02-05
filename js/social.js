@@ -83,6 +83,7 @@
     if (e.keyCode === 13) {
       talkModule.say(input.value);
       input.value = '';
+      input.focus();
     }
   });
   
