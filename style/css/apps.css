@@ -101,6 +101,26 @@ body.noscroll {
   background-size: cover;
 }
 
+#big-active-tile .msg {
+  text-align: left;
+  width: 60%;
+  font-size: 15px;
+  padding: 5px;
+  margin: 5px 0;
+  color: #fff;
+  opacity: 0.8;
+}
+
+#big-active-tile .msg.incoming {
+  background-color: #F6532C;
+  float: right;
+}
+
+#big-active-tile .msg.outgoing {
+  background-image: url('/style/img/trans-pix.png');
+  float: left;
+}
+
 .small-icons .tile {
   width:  115px;
   height: 115px;
