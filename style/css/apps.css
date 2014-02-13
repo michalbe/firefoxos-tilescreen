@@ -133,8 +133,12 @@ body.noscroll {
   height: 115px;
 }
 
-.app-label {
+.small-icons .tile .app-label{
   width: 115px;
+}
+
+.app-label {
+  width: 135px;
   height: 35px;
   padding-left: 5px;
   display:block;
