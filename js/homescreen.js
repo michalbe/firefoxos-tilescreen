@@ -4,7 +4,7 @@
   var appsParent = document.getElementById('apps');
   var navigationBar = document.getElementById('navigation');
   var socialActive = false;
-  var spans = navigationBar.querySelectorAll('span');
+  //var spans = navigationBar.querySelectorAll('span');
   // navigation span indexes
   var APPS = 0,
       SOCIAL = 1;
