@@ -17,8 +17,7 @@ body.noscroll {
 
 .tile {
   display: inline-block;
-  width: 180px;
-  height: 180px;
+  width: calc(50% - 8px);
   margin: auto;
   background: no-repeat center;
   background-size: cover;
@@ -29,6 +28,12 @@ body.noscroll {
   text-align: left;
   overflow: hidden;
   position: relative;
+}
+
+.tile:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
 }
 
 .notification {
@@ -129,8 +134,7 @@ body.noscroll {
 }
 
 .small-icons .tile {
-  width:  115px;
-  height: 115px;
+  width: calc(33% - 12px);
 }
 
 .small-icons .tile .app-label{
@@ -138,6 +142,9 @@ body.noscroll {
 }
 
 .app-label {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 135px;
   height: 35px;
   padding-left: 5px;
